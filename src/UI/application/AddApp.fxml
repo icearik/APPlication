@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.UI.application.AddAppController">
+   <children>
+      <Button fx:id="submitBut" layoutX="300.0" layoutY="233.0" mnemonicParsing="false" onAction="#submit" text="Submit">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="lblapp" layoutX="15.0" layoutY="27.0" text="Add Application Form" textFill="#ab3030" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtapp" layoutX="40.0" layoutY="72.0" promptText="Application" AnchorPane.topAnchor="70.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtcom" layoutX="39.0" layoutY="120.0" promptText="Company" AnchorPane.topAnchor="120.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextArea fx:id="brief" layoutX="39.0" layoutY="180.0" prefHeight="23.0" prefWidth="222.0" promptText="Brief Description" AnchorPane.topAnchor="170.0" />
+      <TextArea fx:id="detailed" layoutX="300.0" layoutY="70.0" prefHeight="142.0" prefWidth="244.0" promptText="Detailed Description" AnchorPane.bottomAnchor="88.0" AnchorPane.topAnchor="70.0" />
+      <Button fx:id="uploadBut" layoutX="39.0" layoutY="236.0" mnemonicParsing="false" onAction="#upload" text="Upload Image">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="lblFile" alignment="CENTER_RIGHT" layoutX="159.0" layoutY="242.0" prefHeight="17.0" prefWidth="102.0" text="Upload" />
+   </children>
+</AnchorPane>

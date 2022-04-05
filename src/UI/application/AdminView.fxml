@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdminViewController">
+	<children>
+		<MenuBar layoutY="8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<menus>
+				<Menu mnemonicParsing="false" text="File">
+					<items>
+						<MenuItem fx:id="closeMenu" mnemonicParsing="false" onAction="#closeApp" text="Close" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+		<SplitPane dividerPositions="0.25752508361204013" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+			<items>
+				<AnchorPane maxWidth="150.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+					<children>
+						<SplitPane dividerPositions="0.33692722371967654" orientation="VERTICAL" prefHeight="373.0" prefWidth="131.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+							<items>
+								<AnchorPane maxWidth="129.0" minHeight="73.0" minWidth="129.0" prefHeight="107.0" prefWidth="129.0">
+									<children>
+										<Label layoutX="10.0" layoutY="8.0" text="APPlication" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+											<font>
+												<Font name="Baloo Regular" size="20.0" />
+											</font>
+										</Label>
+										<Label layoutX="17.0" layoutY="43.0" text="Powered by RICC" />
+										<Button fx:id="signOut" layoutX="28.0" layoutY="72.0" mnemonicParsing="false" onAction="#logout" text="Sign Out">
+											<font>
+												<Font name="Baloo Regular" size="14.0" />
+											</font>
+										</Button>
+									</children>
+								</AnchorPane>
+								<AnchorPane maxWidth="129.0" minHeight="0.0" minWidth="129.0" prefHeight="100.0" prefWidth="129.0">
+									<children>
+										<MenuButton alignment="CENTER" layoutX="29.0" layoutY="54.0" mnemonicParsing="false" text="Sort By" textAlignment="CENTER" AnchorPane.topAnchor="65.0">
+											<items>
+												<MenuItem fx:id="rating" mnemonicParsing="false" onAction="#byRating" text="Rating" />
+												<MenuItem fx:id="date" mnemonicParsing="false" onAction="#byDate" text="Date" />
+											</items>
+											<font>
+												<Font name="Baloo Regular" size="12.0" />
+											</font>
+										</MenuButton>
+										<Button fx:id="addBut" layoutX="34.0" layoutY="14.0" mnemonicParsing="false" onAction="#addApp" text="Add App" AnchorPane.topAnchor="25.0">
+											<font>
+												<Font name="Baloo Regular" size="12.0" />
+											</font>
+										</Button>
+                              <Button fx:id="pendingBut" layoutX="19.0" layoutY="106.0" mnemonicParsing="false" onAction="#changeTable" text="Pending Apps" AnchorPane.topAnchor="105.0">
+                                 <font>
+                                    <Font name="Baloo Regular" size="12.0" />
+                                 </font>
+                              </Button>
+									</children>
+								</AnchorPane>
+							</items>
+						</SplitPane>
+					</children>
+				</AnchorPane>
+				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="373.0" prefWidth="538.0">
+					<children>
+						<SplitPane dividerPositions="0.5" layoutX="19.0" orientation="VERTICAL" prefHeight="373.0" prefWidth="440.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+							<items>
+								<AnchorPane maxHeight="55.0" minHeight="55.0" minWidth="0.0" prefHeight="55.0" prefWidth="457.0">
+									<children>
+										<TextField fx:id="searchBar" prefHeight="9.0" prefWidth="429.0" promptText="Search" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="15.0" />
+										<Button fx:id="searchBut" layoutX="352.0" layoutY="13.0" mnemonicParsing="false" onAction="#search" prefHeight="27.0" prefWidth="72.0" text="Search" AnchorPane.rightAnchor="15.0">
+											<font>
+												<Font name="Baloo Regular" size="12.0" />
+											</font>
+										</Button>
+									</children>
+								</AnchorPane>
+								<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+									<children>
+										<TableView fx:id="table" prefHeight="308.0" prefWidth="438.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+											<columns>
+												<TableColumn fx:id="appCol" prefWidth="75.0" text="App" />
+												<TableColumn fx:id="comCol" prefWidth="75.0" text="Company" />
+												<TableColumn fx:id="briefCol" prefWidth="111.0" text="Brief" />
+												<TableColumn fx:id="detCol" minWidth="5.0" prefWidth="96.0" text="Detailed" />
+												<TableColumn fx:id="verCol" text="Version" />
+											</columns>
+										</TableView>
+									</children>
+								</AnchorPane>
+							</items>
+						</SplitPane>
+					</children>
+				</AnchorPane>
+			</items>
+		</SplitPane>
+	</children>
+</AnchorPane>
